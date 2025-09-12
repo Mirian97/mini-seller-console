@@ -34,7 +34,7 @@ export const OpportunityTable = ({ opportunities }: OpportunityTableProps) => {
 
   return (
     <div className="space-y-4">
-      <div className="text-sm text-muted-foreground">
+      <div className="text-sm text-muted-foreground px-2">
         Showing {opportunities.length} opportunities
       </div>
       <div className="bg-card rounded-lg border">
@@ -62,9 +62,11 @@ export const OpportunityTable = ({ opportunities }: OpportunityTableProps) => {
                   key={opportunity.id}
                   className="border-b border-border hover:bg-table-rowHover transition-colors"
                 >
-                  <td className="p-4 font-medium">{opportunity.name}</td>
+                  <td className="p-4 font-medium">
+                    <p className="line-clamp-1">{opportunity.name}</p>
+                  </td>
                   <td className="p-4 text-muted-foreground">
-                    {opportunity.accountName}
+                    <p className="line-clamp-1">{opportunity.accountName}</p>
                   </td>
                   <td className="p-4">
                     <Badge

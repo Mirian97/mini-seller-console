@@ -1,9 +1,12 @@
 import { LeadDetailPanel } from "@/components/lead-detail-panel";
 import { LeadTable } from "@/components/lead-table";
 import { LoadingSpinner } from "@/components/loading-spinner";
+import { MobileHeader } from "@/components/mobile-header";
+import { MobileSidebar } from "@/components/mobile-sidebar";
 import { OpportunityTable } from "@/components/opportunity-table";
 import { Sidebar } from "@/components/sidebar";
 import leadsData from "@/data/leads.json";
+import { useIsMobile } from "@/hooks/use-is-mobile";
 import { useLocalStorage } from "@/hooks/use-local-storage";
 import type { FilterState, Lead, Opportunity } from "@/types";
 import { useEffect, useState } from "react";
@@ -17,6 +20,7 @@ const initialFilters: FilterState = {
 };
 
 const LeadPage = () => {
+  const isMobile = useIsMobile();
   const [activeTab, setActiveTab] = useLocalStorage<"leads" | "opportunities">(
     "activeTab",
     "leads"
@@ -33,6 +37,7 @@ const LeadPage = () => {
   const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
 
   useEffect(() => {
     const loadLeads = async () => {
@@ -77,6 +82,14 @@ const LeadPage = () => {
     setSelectedLead(null);
   };
 
+  const handleMobileMenuClick = () => {
+    setIsMobileSidebarOpen(true);
+  };
+
+  const handleMobileSidebarClose = () => {
+    setIsMobileSidebarOpen(false);
+  };
+
   if (isLoading) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
@@ -107,43 +120,55 @@ const LeadPage = () => {
   }
 
   return (
-    <div className="bg-background flex flex-1">
-      <Sidebar activeTab={activeTab} onTabChange={setActiveTab} />
-      <main className="flex-1 p-6">
-        <div className="max-w-7xl mx-auto">
-          {activeTab === "leads" ? (
-            <>
-              <div className="mb-6">
-                <h1 className="text-2xl font-bold text-foreground mb-2">
-                  Leads Management
-                </h1>
-                <p className="text-muted-foreground">
-                  Manage your sales leads and convert them to opportunities
-                </p>
-              </div>
-              <LeadTable
-                leads={leads}
-                filters={filters}
-                onFiltersChange={setFilters}
-                onLeadSelect={handleLeadSelect}
-                selectedLead={selectedLead}
-              />
-            </>
-          ) : (
-            <>
-              <div className="mb-6">
-                <h1 className="text-2xl font-bold text-foreground mb-2">
-                  Opportunities
-                </h1>
-                <p className="text-muted-foreground">
-                  Track your sales opportunities and their progress
-                </p>
-              </div>
-              <OpportunityTable opportunities={opportunities} />
-            </>
-          )}
-        </div>
-      </main>
+    <div className="bg-background flex flex-1 min-h-screen">
+      {isMobile ? (
+        <MobileSidebar
+          activeTab={activeTab}
+          onTabChange={setActiveTab}
+          isOpen={isMobileSidebarOpen}
+          onClose={handleMobileSidebarClose}
+        />
+      ) : (
+        <Sidebar activeTab={activeTab} onTabChange={setActiveTab} />
+      )}
+      <div className="flex-1 flex flex-col">
+        {isMobile && <MobileHeader onMenuClick={handleMobileMenuClick} />}
+        <main className="flex-1 p-6">
+          <div className="max-w-7xl w-full mx-auto">
+            {activeTab === "leads" ? (
+              <>
+                <div className="mb-6">
+                  <h1 className="text-2xl font-bold text-foreground mb-2">
+                    Leads Management
+                  </h1>
+                  <p className="text-muted-foreground">
+                    Manage your sales leads and convert them to opportunities
+                  </p>
+                </div>
+                <LeadTable
+                  leads={leads}
+                  filters={filters}
+                  onFiltersChange={setFilters}
+                  onLeadSelect={handleLeadSelect}
+                  selectedLead={selectedLead}
+                />
+              </>
+            ) : (
+              <>
+                <div className="mb-6">
+                  <h1 className="text-2xl font-bold text-foreground mb-2">
+                    Opportunities
+                  </h1>
+                  <p className="text-muted-foreground">
+                    Track your sales opportunities and their progress
+                  </p>
+                </div>
+                <OpportunityTable opportunities={opportunities} />
+              </>
+            )}
+          </div>
+        </main>
+      </div>
       <LeadDetailPanel
         lead={selectedLead}
         isOpen={!!selectedLead}

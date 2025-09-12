@@ -55,7 +55,6 @@ export const LeadTable = ({
         filters.search === "" ||
         lead.name.toLowerCase().includes(filters.search.toLowerCase()) ||
         lead.company.toLowerCase().includes(filters.search.toLowerCase());
-
       const matchesStatus =
         filters.status === "" ||
         filters.status === "all" ||
@@ -66,17 +65,14 @@ export const LeadTable = ({
     .sort((a, b) => {
       const aValue = a[sortField];
       const bValue = b[sortField];
-
       if (typeof aValue === "string" && typeof bValue === "string") {
         return sortDirection === "asc"
           ? aValue.localeCompare(bValue)
           : bValue.localeCompare(aValue);
       }
-
       if (typeof aValue === "number" && typeof bValue === "number") {
         return sortDirection === "asc" ? aValue - bValue : bValue - aValue;
       }
-
       return 0;
     });
 
@@ -122,15 +118,15 @@ export const LeadTable = ({
           </SelectContent>
         </Select>
       </div>
-      <div className="text-sm text-muted-foreground px-4">
+      <div className="text-sm text-muted-foreground px-2">
         Showing {filteredAndSortedLeads.length} of {leads.length} leads
       </div>
       <div className="bg-card rounded-lg border">
         <div className="overflow-auto max-h-[65dvh]">
           <table className="scrollable-table w-full text-sm">
             <thead className="bg-table-header">
-              <tr className="border-b border-border">
-                <th className="text-left p-4 font-medium text-foreground">
+              <tr className="[&>th]:p-4 [&>th]:border-b [&>th]:border-border">
+                <th className="text-left font-medium text-foreground">
                   <Button
                     variant="ghost"
                     size="sm"
@@ -140,7 +136,7 @@ export const LeadTable = ({
                     Name <SortIcon field="name" />
                   </Button>
                 </th>
-                <th className="text-left p-4 font-medium text-foreground">
+                <th className="text-left font-medium text-foreground">
                   <Button
                     variant="ghost"
                     size="sm"
@@ -150,13 +146,10 @@ export const LeadTable = ({
                     Company <SortIcon field="company" />
                   </Button>
                 </th>
-                <th className="text-left p-4 font-medium text-foreground">
-                  Email
-                </th>
-                <th className="text-left p-4 font-medium text-foreground">
+                <th className="text-left font-medium text-foreground">
                   Source
                 </th>
-                <th className="text-left p-4 font-medium text-foreground">
+                <th className="text-left font-medium text-foreground">
                   <Button
                     variant="ghost"
                     size="sm"
@@ -166,7 +159,7 @@ export const LeadTable = ({
                     Score <SortIcon field="score" />
                   </Button>
                 </th>
-                <th className="text-left p-4 font-medium text-foreground">
+                <th className="text-left font-medium text-foreground">
                   Status
                 </th>
               </tr>
@@ -177,26 +170,32 @@ export const LeadTable = ({
                   key={lead.id}
                   onClick={() => onLeadSelect(lead)}
                   className={cn(
-                    "cursor-pointer border-b border-border transition-colors",
+                    "cursor-pointer border-border border-b transition-colors [&>td]:py-2 [&>td]:px-4",
                     "hover:bg-table-rowHover",
                     selectedLead?.id === lead.id &&
                       "bg-primary/5 border-primary/20"
                   )}
                 >
-                  <td className="p-4 font-medium">{lead.name}</td>
-                  <td className="p-4 text-muted-foreground">{lead.company}</td>
-                  <td className="p-4 text-muted-foreground">{lead.email}</td>
-                  <td className="p-4 text-muted-foreground capitalize">
-                    {lead.source}
+                  <td className="px-4 py-0 font-medium leading-tight">
+                    <p className="line-clamp-1">{lead.name}</p>
+                    <p className="text-muted-foreground text-[11px]">
+                      {lead.email}
+                    </p>
                   </td>
-                  <td className="p-4">
+                  <td className="text-muted-foreground">
+                    <p className="line-clamp-1">{lead.company}</p>
+                  </td>
+                  <td className="text-muted-foreground capitalize">
+                    <p className="line-clamp-1">{lead.source}</p>
+                  </td>
+                  <td>
                     <span
                       className={cn("font-medium", getScoreColor(lead.score))}
                     >
                       {lead.score}
                     </span>
                   </td>
-                  <td className="p-4">
+                  <td>
                     <Badge
                       className="uppercase text-[9px] !font-semibold"
                       variant={getStatusBadgeVariant(lead.status)}
