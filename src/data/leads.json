@@ -1,0 +1,452 @@
+[
+  {
+    "id": "lead-001",
+    "name": "John Smith",
+    "company": "TechCorp Solutions",
+    "email": "john.smith@techcorp.com",
+    "source": "website",
+    "score": 85,
+    "status": "New"
+  },
+  {
+    "id": "lead-002",
+    "name": "Sarah Johnson",
+    "company": "Global Industries",
+    "email": "sarah.johnson@global.com",
+    "source": "referral",
+    "score": 92,
+    "status": "Contacted"
+  },
+  {
+    "id": "lead-003",
+    "name": "Michael Chen",
+    "company": "StartupHub",
+    "email": "m.chen@startuphub.io",
+    "source": "social media",
+    "score": 76,
+    "status": "Qualified"
+  },
+  {
+    "id": "lead-004",
+    "name": "Emily Davis",
+    "company": "FinanceFirst",
+    "email": "emily.davis@financefirst.com",
+    "source": "cold call",
+    "score": 68,
+    "status": "New"
+  },
+  {
+    "id": "lead-005",
+    "name": "Robert Wilson",
+    "company": "Manufacturing Plus",
+    "email": "r.wilson@mfgplus.com",
+    "source": "trade show",
+    "score": 89,
+    "status": "Qualified"
+  },
+  {
+    "id": "lead-006",
+    "name": "Lisa Anderson",
+    "company": "Healthcare Systems",
+    "email": "lisa.anderson@healthsys.com",
+    "source": "website",
+    "score": 73,
+    "status": "Contacted"
+  },
+  {
+    "id": "lead-007",
+    "name": "David Brown",
+    "company": "EduTech Innovations",
+    "email": "david.brown@edutech.com",
+    "source": "referral",
+    "score": 81,
+    "status": "New"
+  },
+  {
+    "id": "lead-008",
+    "name": "Jennifer Martinez",
+    "company": "RetailMax",
+    "email": "j.martinez@retailmax.com",
+    "source": "email campaign",
+    "score": 64,
+    "status": "Lost"
+  },
+  {
+    "id": "lead-009",
+    "name": "Thomas Garcia",
+    "company": "LogiFlow",
+    "email": "thomas.garcia@logiflow.com",
+    "source": "website",
+    "score": 95,
+    "status": "Qualified"
+  },
+  {
+    "id": "lead-010",
+    "name": "Amanda White",
+    "company": "ConsultPro",
+    "email": "amanda.white@consultpro.com",
+    "source": "networking",
+    "score": 78,
+    "status": "Contacted"
+  },
+  {
+    "id": "lead-011",
+    "name": "Christopher Lee",
+    "company": "CloudVenture",
+    "email": "chris.lee@cloudventure.com",
+    "source": "website",
+    "score": 87,
+    "status": "New"
+  },
+  {
+    "id": "lead-012",
+    "name": "Michelle Taylor",
+    "company": "DataDriven Corp",
+    "email": "michelle.taylor@datadriven.com",
+    "source": "referral",
+    "score": 91,
+    "status": "Qualified"
+  },
+  {
+    "id": "lead-013",
+    "name": "Kevin Rodriguez",
+    "company": "BuildRight Construction",
+    "email": "kevin.rodriguez@buildright.com",
+    "source": "trade show",
+    "score": 72,
+    "status": "Contacted"
+  },
+  {
+    "id": "lead-014",
+    "name": "Rachel Thompson",
+    "company": "MediaFlow",
+    "email": "rachel.thompson@mediaflow.com",
+    "source": "social media",
+    "score": 83,
+    "status": "New"
+  },
+  {
+    "id": "lead-015",
+    "name": "Daniel Moore",
+    "company": "GreenEnergy Solutions",
+    "email": "daniel.moore@greenenergy.com",
+    "source": "cold call",
+    "score": 77,
+    "status": "Qualified"
+  },
+  {
+    "id": "lead-016",
+    "name": "Jessica Clark",
+    "company": "TravelEase",
+    "email": "jessica.clark@travelease.com",
+    "source": "website",
+    "score": 69,
+    "status": "New"
+  },
+  {
+    "id": "lead-017",
+    "name": "Mark Turner",
+    "company": "SecurityFirst",
+    "email": "mark.turner@securityfirst.com",
+    "source": "email campaign",
+    "score": 84,
+    "status": "Contacted"
+  },
+  {
+    "id": "lead-018",
+    "name": "Nicole Hill",
+    "company": "FoodService Pro",
+    "email": "nicole.hill@foodservicepro.com",
+    "source": "referral",
+    "score": 75,
+    "status": "Qualified"
+  },
+  {
+    "id": "lead-019",
+    "name": "Andrew Scott",
+    "company": "AutoTech Systems",
+    "email": "andrew.scott@autotech.com",
+    "source": "trade show",
+    "score": 88,
+    "status": "New"
+  },
+  {
+    "id": "lead-020",
+    "name": "Stephanie Adams",
+    "company": "WellnessCorp",
+    "email": "stephanie.adams@wellnesscorp.com",
+    "source": "networking",
+    "score": 71,
+    "status": "Contacted"
+  },
+  {
+    "id": "lead-021",
+    "name": "Brian Mitchell",
+    "company": "SportsTech",
+    "email": "brian.mitchell@sportstech.com",
+    "source": "website",
+    "score": 79,
+    "status": "Qualified"
+  },
+  {
+    "id": "lead-022",
+    "name": "Kelly Roberts",
+    "company": "FashionForward",
+    "email": "kelly.roberts@fashionforward.com",
+    "source": "social media",
+    "score": 66,
+    "status": "New"
+  },
+  {
+    "id": "lead-023",
+    "name": "Justin Parker",
+    "company": "RealEstate Plus",
+    "email": "justin.parker@realestate.com",
+    "source": "cold call",
+    "score": 82,
+    "status": "Lost"
+  },
+  {
+    "id": "lead-024",
+    "name": "Megan Cooper",
+    "company": "PetCare Central",
+    "email": "megan.cooper@petcare.com",
+    "source": "referral",
+    "score": 74,
+    "status": "Contacted"
+  },
+  {
+    "id": "lead-025",
+    "name": "Ryan Bailey",
+    "company": "MusicStream",
+    "email": "ryan.bailey@musicstream.com",
+    "source": "website",
+    "score": 90,
+    "status": "Qualified"
+  },
+  {
+    "id": "lead-026",
+    "name": "Laura Nelson",
+    "company": "LegalServices Inc",
+    "email": "laura.nelson@legalservices.com",
+    "source": "networking",
+    "score": 77,
+    "status": "New"
+  },
+  {
+    "id": "lead-027",
+    "name": "Gregory Ward",
+    "company": "AgriTech Solutions",
+    "email": "gregory.ward@agritech.com",
+    "source": "trade show",
+    "score": 85,
+    "status": "Contacted"
+  },
+  {
+    "id": "lead-028",
+    "name": "Samantha Murphy",
+    "company": "GameDev Studio",
+    "email": "samantha.murphy@gamedev.com",
+    "source": "email campaign",
+    "score": 67,
+    "status": "Qualified"
+  },
+  {
+    "id": "lead-029",
+    "name": "Jonathan Rivera",
+    "company": "BioTech Innovations",
+    "email": "jonathan.rivera@biotech.com",
+    "source": "website",
+    "score": 93,
+    "status": "New"
+  },
+  {
+    "id": "lead-030",
+    "name": "Heather Brooks",
+    "company": "EventPro Management",
+    "email": "heather.brooks@eventpro.com",
+    "source": "referral",
+    "score": 70,
+    "status": "Contacted"
+  },
+  {
+    "id": "lead-031",
+    "name": "Patrick Kelly",
+    "company": "TechStart Solutions",
+    "email": "patrick.kelly@techstart.com",
+    "source": "website",
+    "score": 88,
+    "status": "New"
+  },
+  {
+    "id": "lead-032",
+    "name": "Monica Rodriguez",
+    "company": "DesignFirst Studio",
+    "email": "monica.rodriguez@designfirst.com",
+    "source": "social media",
+    "score": 72,
+    "status": "Contacted"
+  },
+  {
+    "id": "lead-033",
+    "name": "James Patterson",
+    "company": "CloudNet Systems",
+    "email": "james.patterson@cloudnet.com",
+    "source": "trade show",
+    "score": 91,
+    "status": "Qualified"
+  },
+  {
+    "id": "lead-034",
+    "name": "Isabella Chen",
+    "company": "MobileFirst Apps",
+    "email": "isabella.chen@mobilefirst.com",
+    "source": "referral",
+    "score": 86,
+    "status": "New"
+  },
+  {
+    "id": "lead-035",
+    "name": "Steven Wright",
+    "company": "DataAnalytics Pro",
+    "email": "steven.wright@dataanalytics.com",
+    "source": "cold call",
+    "score": 74,
+    "status": "Lost"
+  },
+  {
+    "id": "lead-036",
+    "name": "Catherine Lewis",
+    "company": "SmartHome Tech",
+    "email": "catherine.lewis@smarthome.com",
+    "source": "website",
+    "score": 80,
+    "status": "Contacted"
+  },
+  {
+    "id": "lead-037",
+    "name": "Richard Hall",
+    "company": "FinTech Innovators",
+    "email": "richard.hall@fintech.com",
+    "source": "networking",
+    "score": 89,
+    "status": "Qualified"
+  },
+  {
+    "id": "lead-038",
+    "name": "Sophie Turner",
+    "company": "EcoSolutions Inc",
+    "email": "sophie.turner@ecosolutions.com",
+    "source": "email campaign",
+    "score": 77,
+    "status": "New"
+  },
+  {
+    "id": "lead-039",
+    "name": "Marcus Johnson",
+    "company": "RoboTech Industries",
+    "email": "marcus.johnson@robotech.com",
+    "source": "trade show",
+    "score": 84,
+    "status": "Contacted"
+  },
+  {
+    "id": "lead-040",
+    "name": "Elena Martinez",
+    "company": "CyberSec Solutions",
+    "email": "elena.martinez@cybersec.com",
+    "source": "referral",
+    "score": 92,
+    "status": "Qualified"
+  },
+  {
+    "id": "lead-041",
+    "name": "Anthony Davis",
+    "company": "BlockChain Ventures",
+    "email": "anthony.davis@blockchain.com",
+    "source": "website",
+    "score": 75,
+    "status": "New"
+  },
+  {
+    "id": "lead-042",
+    "name": "Rachel Green",
+    "company": "AIAssist Corp",
+    "email": "rachel.green@aiassist.com",
+    "source": "social media",
+    "score": 81,
+    "status": "Contacted"
+  },
+  {
+    "id": "lead-043",
+    "name": "George Wilson",
+    "company": "VirtualReality Labs",
+    "email": "george.wilson@vrlabs.com",
+    "source": "cold call",
+    "score": 78,
+    "status": "Qualified"
+  },
+  {
+    "id": "lead-044",
+    "name": "Victoria Brown",
+    "company": "IoT Solutions",
+    "email": "victoria.brown@iotsolutions.com",
+    "source": "networking",
+    "score": 73,
+    "status": "New"
+  },
+  {
+    "id": "lead-045",
+    "name": "Nathan Clark",
+    "company": "QuantumTech",
+    "email": "nathan.clark@quantumtech.com",
+    "source": "trade show",
+    "score": 87,
+    "status": "Contacted"
+  },
+  {
+    "id": "lead-046",
+    "name": "Grace Anderson",
+    "company": "NanoSystems",
+    "email": "grace.anderson@nanosystems.com",
+    "source": "website",
+    "score": 79,
+    "status": "Qualified"
+  },
+  {
+    "id": "lead-047",
+    "name": "Tyler Moore",
+    "company": "3D Printing Plus",
+    "email": "tyler.moore@3dprinting.com",
+    "source": "email campaign",
+    "score": 76,
+    "status": "New"
+  },
+  {
+    "id": "lead-048",
+    "name": "Olivia Taylor",
+    "company": "SpaceTech Industries",
+    "email": "olivia.taylor@spacetech.com",
+    "source": "referral",
+    "score": 90,
+    "status": "Qualified"
+  },
+  {
+    "id": "lead-049",
+    "name": "Jacob Miller",
+    "company": "BioMed Solutions",
+    "email": "jacob.miller@biomed.com",
+    "source": "cold call",
+    "score": 71,
+    "status": "Lost"
+  },
+  {
+    "id": "lead-050",
+    "name": "Emma Thompson",
+    "company": "CleanEnergy Corp",
+    "email": "emma.thompson@cleanenergy.com",
+    "source": "networking",
+    "score": 83,
+    "status": "Contacted"
+  }
+]
