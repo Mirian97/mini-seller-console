@@ -10,17 +10,12 @@ import {
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
 import type { FilterState, Lead } from "@/types";
+import { filterAndSortLeads } from "@/utils/filter-and-sort-leads";
 import { getScoreColor } from "@/utils/get-score-color";
 import { getStatusBadgeVariant } from "@/utils/get-status-badge-variant";
-import {
-  ArrowDown,
-  ArrowUp,
-  ArrowUpDown,
-  Filter,
-  Search,
-  Users,
-} from "lucide-react";
+import { Filter, Search, Users } from "lucide-react";
 import { useState } from "react";
+import { SortIcon } from "./sort-icon";
 
 interface LeadTableProps {
   leads: Lead[];
@@ -40,6 +35,13 @@ export const LeadTable = ({
   const [sortField, setSortField] = useState<keyof Lead>("score");
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc");
 
+  const filteredAndSortedLeads = filterAndSortLeads(
+    leads,
+    filters,
+    sortField,
+    sortDirection
+  );
+
   const handleSort = (field: keyof Lead) => {
     if (sortField === field) {
       setSortDirection(sortDirection === "asc" ? "desc" : "asc");
@@ -47,42 +49,6 @@ export const LeadTable = ({
       setSortField(field);
       setSortDirection("desc");
     }
-  };
-
-  const filteredAndSortedLeads = leads
-    .filter((lead) => {
-      const matchesSearch =
-        filters.search === "" ||
-        lead.name.toLowerCase().includes(filters.search.toLowerCase()) ||
-        lead.company.toLowerCase().includes(filters.search.toLowerCase());
-      const matchesStatus =
-        filters.status === "" ||
-        filters.status === "all" ||
-        lead.status === filters.status;
-
-      return matchesSearch && matchesStatus;
-    })
-    .sort((a, b) => {
-      const aValue = a[sortField];
-      const bValue = b[sortField];
-      if (typeof aValue === "string" && typeof bValue === "string") {
-        return sortDirection === "asc"
-          ? aValue.localeCompare(bValue)
-          : bValue.localeCompare(aValue);
-      }
-      if (typeof aValue === "number" && typeof bValue === "number") {
-        return sortDirection === "asc" ? aValue - bValue : bValue - aValue;
-      }
-      return 0;
-    });
-
-  const SortIcon = ({ field }: { field: keyof Lead }) => {
-    if (sortField !== field) return <ArrowUpDown className="h-4 w-4" />;
-    return sortDirection === "asc" ? (
-      <ArrowUp className="h-4 w-4" />
-    ) : (
-      <ArrowDown className="h-4 w-4" />
-    );
   };
 
   return (
@@ -122,7 +88,7 @@ export const LeadTable = ({
         Showing {filteredAndSortedLeads.length} of {leads.length} leads
       </div>
       <div className="bg-card rounded-lg border">
-        <div className="overflow-auto max-h-[65dvh]">
+        <div className="overflow-auto max-h-[55dvh] sm:max-h-[65dvh]">
           <table className="scrollable-table w-full text-sm">
             <thead className="bg-table-header">
               <tr className="[&>th]:p-4 [&>th]:border-b [&>th]:border-border">
@@ -133,7 +99,12 @@ export const LeadTable = ({
                     onClick={() => handleSort("name")}
                     className="h-auto !px-0 font-medium text-foreground hover:text-primary"
                   >
-                    Name <SortIcon field="name" />
+                    Name{" "}
+                    <SortIcon
+                      field="name"
+                      sortField={sortField}
+                      sortDirection={sortDirection}
+                    />
                   </Button>
                 </th>
                 <th className="text-left font-medium text-foreground">
@@ -143,7 +114,12 @@ export const LeadTable = ({
                     onClick={() => handleSort("company")}
                     className="h-auto !px-0 font-medium text-foreground hover:text-primary"
                   >
-                    Company <SortIcon field="company" />
+                    Company{" "}
+                    <SortIcon
+                      field="company"
+                      sortField={sortField}
+                      sortDirection={sortDirection}
+                    />
                   </Button>
                 </th>
                 <th className="text-left font-medium text-foreground">
@@ -156,7 +132,12 @@ export const LeadTable = ({
                     onClick={() => handleSort("score")}
                     className="h-auto !px-0 font-medium text-foreground hover:text-primary"
                   >
-                    Score <SortIcon field="score" />
+                    Score{" "}
+                    <SortIcon
+                      field="score"
+                      sortField={sortField}
+                      sortDirection={sortDirection}
+                    />
                   </Button>
                 </th>
                 <th className="text-left font-medium text-foreground">

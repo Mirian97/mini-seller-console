@@ -38,7 +38,7 @@ export const OpportunityTable = ({ opportunities }: OpportunityTableProps) => {
         Showing {opportunities.length} opportunities
       </div>
       <div className="bg-card rounded-lg border">
-        <div className="overflow-auto max-h-[65dvh]">
+        <div className="overflow-auto max-h-[55dvh] sm:max-h-[65dvh]">
           <table className="scrollable-table w-full text-sm">
             <thead className="bg-table-header">
               <tr className="border-b border-border">

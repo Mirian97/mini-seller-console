@@ -120,7 +120,7 @@ const LeadPage = () => {
   }
 
   return (
-    <div className="bg-background flex flex-1 min-h-screen">
+    <div className="bg-background flex flex-1 min-h-screen w-full">
       {isMobile ? (
         <MobileSidebar
           activeTab={activeTab}
@@ -131,7 +131,7 @@ const LeadPage = () => {
       ) : (
         <Sidebar activeTab={activeTab} onTabChange={setActiveTab} />
       )}
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col w-full">
         {isMobile && <MobileHeader onMenuClick={handleMobileMenuClick} />}
         <main className="flex-1 p-6">
           <div className="max-w-7xl w-full mx-auto">
