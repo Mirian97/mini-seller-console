@@ -60,7 +60,7 @@ export const OpportunityTable = ({ opportunities }: OpportunityTableProps) => {
               {opportunities.map((opportunity) => (
                 <tr
                   key={opportunity.id}
-                  className="border-b border-border hover:bg-table-rowHover transition-colors"
+                  className="border-b border-border hover:bg-table-header/60 transition-colors"
                 >
                   <td className="p-4 font-medium">
                     <p className="line-clamp-1">{opportunity.name}</p>

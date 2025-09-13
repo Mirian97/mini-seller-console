@@ -151,8 +151,7 @@ export const LeadTable = ({
                   key={lead.id}
                   onClick={() => onLeadSelect(lead)}
                   className={cn(
-                    "cursor-pointer border-border border-b transition-colors [&>td]:py-2 [&>td]:px-4",
-                    "hover:bg-table-rowHover",
+                    "cursor-pointer border-border border-b transition-colors [&>td]:py-2 [&>td]:px-4 hover:bg-table-header/60",
                     selectedLead?.id === lead.id &&
                       "bg-primary/5 border-primary/20"
                   )}
