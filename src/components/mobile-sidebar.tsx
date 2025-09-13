@@ -45,7 +45,7 @@ export const MobileSidebar = ({
       )}
       <div
         className={cn(
-          "fixed top-0 left-0 z-50 h-full w-72 bg-sidebar-bg text-sidebar-foreground transform transition-transform duration-300 ease-in-out lg:hidden",
+          "fixed top-0 left-0 z-50 h-full w-80 bg-sidebar-bg text-sidebar-foreground transform transition-transform duration-300 ease-in-out lg:hidden",
           isOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
