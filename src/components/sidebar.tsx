@@ -1,12 +1,12 @@
 import { navList } from "@/constants/nav-list";
 import { Link } from "@tanstack/react-router";
-import { BarChart3 } from "lucide-react";
+import ChartLogo from "public/svgs/chart.svg?react";
 
 export const Sidebar = () => (
   <div className="w-72 bg-sidebar-bg text-sidebar-foreground h-screen flex flex-col">
     <div className="p-6 border-b border-sidebar-foreground/10">
       <div className="flex items-center gap-2">
-        <BarChart3 className="h-8 w-8 text-sidebar-foreground" />
+        <ChartLogo className="size-8" />
         <h1 className="text-xl font-bold">Mini Seller Console</h1>
       </div>
     </div>

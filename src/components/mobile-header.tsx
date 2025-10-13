@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { BarChart3, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
+import ChartLogo from "public/svgs/chart.svg?react";
 
 interface MobileHeaderProps {
   onMenuClick: () => void;
@@ -9,7 +10,7 @@ export const MobileHeader = ({ onMenuClick }: MobileHeaderProps) => {
   return (
     <div className="lg:hidden bg-background border-b border-border px-4 py-3 flex items-center justify-between">
       <div className="flex items-center gap-2">
-        <BarChart3 className="h-6 w-6 text-foreground" />
+        <ChartLogo className="h-6 w-6 text-foreground" />
         <h1 className="text-lg font-bold text-foreground">
           Mini Seller Console
         </h1>
