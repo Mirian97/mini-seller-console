@@ -1,4 +1,5 @@
 import { OpportunityTable } from "@/components/opportunity-table";
+import { TitlePage } from "@/components/title-page";
 import { getOpportunities } from "@/services";
 import { createFileRoute } from "@tanstack/react-router";
 
@@ -12,14 +13,11 @@ function RouteComponent() {
 
   return (
     <>
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold text-foreground mb-2">
-          Opportunities
-        </h1>
-        <p className="text-muted-foreground">
-          Track your sales opportunities and their progress
-        </p>
-      </div>
+      <TitlePage
+        className="mb-6"
+        title="Opportunities"
+        description="Track your sales opportunities and their progress"
+      />
       <OpportunityTable opportunities={oportunityData} />
     </>
   );

@@ -57,6 +57,7 @@ function RouteComponent() {
     <>
       <div className="max-w-7xl w-full mx-auto">
         <TitlePage
+          className="mb-6"
           title="Leads Management"
           description="Manage your sales leads and convert them to opportunities"
         />
