@@ -24,10 +24,8 @@ export const AppLayout = () => {
       )}
       <div className="flex-1 flex flex-col w-full">
         {isMobile && <MobileHeader onMenuClick={onToggleMobileSidebar} />}
-        <main className="flex-1 p-6">
-          <div className="max-w-7xl w-full mx-auto">
-            <Outlet />
-          </div>
+        <main className="flex-1 p-6 max-w-7xl w-full mx-auto flex flex-col">
+          <Outlet />
         </main>
       </div>
     </div>
