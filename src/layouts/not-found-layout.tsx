@@ -1,7 +1,7 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useEffect } from "react";
 
-export const NotFound = () => {
+export const NotFoundLayout = () => {
   const location = useLocation();
 
   useEffect(() => {

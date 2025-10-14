@@ -3,6 +3,7 @@ import { LeadDetailPanel } from "@/components/lead-detail-panel";
 import { LeadTable } from "@/components/lead-table";
 import { TitlePage } from "@/components/title-page";
 import { useLocalStorage } from "@/hooks/use-local-storage";
+import { LoadingLayout } from "@/layouts/loading-layout";
 import { getLeads } from "@/services";
 import type { FilterState, Lead, Opportunity } from "@/types";
 import { createFileRoute } from "@tanstack/react-router";
@@ -11,6 +12,7 @@ import { useState } from "react";
 export const Route = createFileRoute("/")({
   component: RouteComponent,
   loader: getLeads,
+  pendingComponent: LoadingLayout,
 });
 
 const initialFilters: FilterState = {

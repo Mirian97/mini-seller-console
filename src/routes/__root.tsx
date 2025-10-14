@@ -1,14 +1,14 @@
 import { AppLayout } from "@/layouts/app-layout";
 import { Error } from "@/layouts/error-layout";
-import { Loading } from "@/layouts/loading-layout";
-import { NotFound } from "@/layouts/not-found-layout";
+import { LoadingLayout } from "@/layouts/loading-layout";
+import { NotFoundLayout } from "@/layouts/not-found-layout";
 import { createRootRoute } from "@tanstack/react-router";
 import * as React from "react";
 
 export const Route = createRootRoute({
   component: RootComponent,
-  notFoundComponent: NotFound,
-  pendingComponent: Loading,
+  notFoundComponent: NotFoundLayout,
+  pendingComponent: LoadingLayout,
   errorComponent: Error,
 });
 
