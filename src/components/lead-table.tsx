@@ -149,6 +149,7 @@ export const LeadTable = ({
               {filteredAndSortedLeads.map((lead) => (
                 <tr
                   key={lead.id}
+                  data-testid="lead-row"
                   onClick={() => onLeadSelect(lead)}
                   className={cn(
                     "cursor-pointer border-border border-b transition-colors [&>td]:py-2 [&>td]:px-4 hover:bg-table-header/60",
