@@ -24,7 +24,7 @@ export const OpportunityTable = ({ opportunities }: OpportunityTableProps) => {
     return (
       <div className="bg-card rounded-lg border p-8 text-center">
         <Target className="h-12 w-12 mx-auto mb-4 text-muted-foreground opacity-50" />
-        <h3 className="text-lg font-medium mb-2">No opportunities yet</h3>
+        <p className="text-lg font-medium mb-2">No opportunities yet</p>
         <p className="text-muted-foreground">
           Convert qualified leads to create your first opportunity
         </p>

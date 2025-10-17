@@ -1,15 +1,17 @@
 import { expect, test } from "@playwright/test";
 
 test.beforeEach(async ({ page }) => {
-  await page.goto("/");
+  await page.goto("/oportunity");
 });
 
-test.describe("Lead Page", () => {
+test.describe("Opportunity Page", () => {
   test("should show titles", async ({ page }) => {
     await expect(
-      page.getByRole("heading", { name: "Leads Management" })
+      page.getByRole("heading", { name: "Opportunities" })
     ).toBeVisible();
-    await expect(page.getByText("Manage your sales leads and")).toBeVisible();
+    await expect(
+      page.getByText("Track your sales opportunities and their progress")
+    ).toBeVisible();
   });
 
   test("should render not found in lead table", async ({ page }) => {
