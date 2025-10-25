@@ -24,7 +24,7 @@ export const OpportunityTable = ({ opportunities }: OpportunityTableProps) => {
     return (
       <div className="bg-card rounded-lg border p-8 text-center">
         <Target className="h-12 w-12 mx-auto mb-4 text-muted-foreground opacity-50" />
-        <h3 className="text-lg font-medium mb-2">No opportunities yet</h3>
+        <p className="text-lg font-medium mb-2">No opportunities yet</p>
         <p className="text-muted-foreground">
           Convert qualified leads to create your first opportunity
         </p>
@@ -38,7 +38,7 @@ export const OpportunityTable = ({ opportunities }: OpportunityTableProps) => {
         Showing {opportunities.length} opportunities
       </div>
       <div className="bg-card rounded-lg border">
-        <div className="overflow-auto max-h-[55dvh] sm:max-h-[65dvh]">
+        <div className="overflow-auto max-h-[55dvh] sm:max-h-[63dvh]">
           <table className="scrollable-table w-full text-sm">
             <thead className="bg-table-header">
               <tr className="border-b border-border">

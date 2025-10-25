@@ -155,7 +155,7 @@ export const LeadDetailPanel = ({
                   setEditedLead({ ...editedLead, status: value })
                 }
               >
-                <SelectTrigger>
+                <SelectTrigger id="status">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>

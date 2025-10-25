@@ -88,7 +88,7 @@ export const LeadTable = ({
         Showing {filteredAndSortedLeads.length} of {leads.length} leads
       </div>
       <div className="bg-card rounded-lg border">
-        <div className="overflow-auto max-h-[55dvh] sm:max-h-[65dvh]">
+        <div className="overflow-auto max-h-[55dvh] sm:max-h-[63dvh]">
           <table className="scrollable-table w-full text-sm">
             <thead className="bg-table-header">
               <tr className="[&>th]:p-4 [&>th]:border-b [&>th]:border-border">
@@ -149,6 +149,7 @@ export const LeadTable = ({
               {filteredAndSortedLeads.map((lead) => (
                 <tr
                   key={lead.id}
+                  data-testid="lead-row"
                   onClick={() => onLeadSelect(lead)}
                   className={cn(
                     "cursor-pointer border-border border-b transition-colors [&>td]:py-2 [&>td]:px-4 hover:bg-table-header/60",
