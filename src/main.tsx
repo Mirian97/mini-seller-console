@@ -8,7 +8,7 @@ const router = createRouter({ routeTree });
 
 if (!router.isServer) {
   Sentry.init({
-    dsn: process.env.VITE_SENTRY_DSN,
+    dsn: import.meta.env.VITE_SENTRY_DSN,
     sendDefaultPii: true,
   });
 }
