@@ -8,7 +8,7 @@ const router = createRouter({ routeTree });
 
 if (!router.isServer) {
   Sentry.init({
-    dsn: "https://12bec033d54277555607c652f62c7081@o4510291449872384.ingest.us.sentry.io/4510291451314176",
+    dsn: process.env.VITE_SENTRY_DSN,
     sendDefaultPii: true,
   });
 }
