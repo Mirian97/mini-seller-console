@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && cp instrument.server.mjs /dist",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -15,6 +15,7 @@
     "@radix-ui/react-separator": "^1.1.7",
     "@radix-ui/react-slot": "^1.2.3",
     "@sentry/react": "^10.22.0",
+    "@sentry/tanstackstart-react": "^10.22.0",
     "@sentry/vite-plugin": "^4.6.0",
     "@tailwindcss/vite": "^4.1.13",
     "@tanstack/react-router": "^1.132.47",

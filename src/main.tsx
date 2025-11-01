@@ -4,12 +4,14 @@ import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import { routeTree } from "./routeTree.gen";
 
-Sentry.init({
-  dsn: "https://12bec033d54277555607c652f62c7081@o4510291449872384.ingest.us.sentry.io/4510291451314176",
-  sendDefaultPii: true,
-});
-
 const router = createRouter({ routeTree });
+
+if (!router.isServer) {
+  Sentry.init({
+    dsn: "https://12bec033d54277555607c652f62c7081@o4510291449872384.ingest.us.sentry.io/4510291451314176",
+    sendDefaultPii: true,
+  });
+}
 
 declare module "@tanstack/react-router" {
   interface Register {
