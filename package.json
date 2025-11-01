@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "NODE_OPTIONS='--import ./instrument.server.mjs' vite dev",
-    "start": "node --import /dist/instrument.server.mjs /dist/index.mjs",
-    "build": "tsc -b && vite build && cp instrument.server.mjs /dist",
+    "start": "node --import ./dist/instrument.server.mjs ./dist/index.mjs",
+    "build": "tsc -b && vite build && cp instrument.server.mjs ./dist",
     "lint": "eslint .",
     "preview": "vite preview"
   },
