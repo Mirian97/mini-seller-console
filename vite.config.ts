@@ -1,3 +1,4 @@
+import { sentryVitePlugin } from "@sentry/vite-plugin";
 import tailwindcss from "@tailwindcss/vite";
 import { tanstackRouter } from "@tanstack/router-plugin/vite";
 import react from "@vitejs/plugin-react-swc";
@@ -14,11 +15,18 @@ export default defineConfig({
     react(),
     svgr(),
     tailwindcss(),
+    sentryVitePlugin({
+      org: "mirian-ik",
+      project: "javascript-react",
+    }),
   ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
       public: path.resolve(__dirname, "./public"),
     },
+  },
+  build: {
+    sourcemap: true,
   },
 });
