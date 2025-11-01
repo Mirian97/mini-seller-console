@@ -32,3 +32,6 @@ all.txt
 /playwright/.cache/
 /playwright/.auth/
 
+
+# Sentry Config File
+.env.sentry-build-plugin
