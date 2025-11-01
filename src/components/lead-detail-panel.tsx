@@ -58,7 +58,7 @@ export const LeadDetailPanel = ({
       await new Promise((resolve) => setTimeout(resolve, 800));
       onLeadUpdate(editedLead);
       toast.success("Lead information has been successfully updated.");
-    } catch (error) {
+    } catch {
       toast.error("Failed to update lead. Please try again.");
     } finally {
       setSaving(false);
@@ -87,7 +87,7 @@ export const LeadDetailPanel = ({
       onConvertToOpportunity(opportunity);
       toast.success("Lead has been successfully converted to an opportunity.");
       onClose();
-    } catch (error) {
+    } catch {
       toast.success("Failed to convert lead. Please try again.");
     } finally {
       setConverting(false);
