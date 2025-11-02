@@ -18,6 +18,13 @@ export default defineConfig({
     sentryVitePlugin({
       org: "mirian-ik",
       project: "javascript-react",
+      authToken: process.env.VITE_SENTRY_AUTH_TOKEN,
+      release: {
+        create: true,
+        setCommits: {
+          auto: true,
+        },
+      },
     }),
   ],
   resolve: {
